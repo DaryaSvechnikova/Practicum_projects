@@ -75,7 +75,11 @@
 6. Сохраните результаты для ревью.
 
 ## Теги проекта (Topics)
-sql data-analysis postgresql game-analytics in-game-economy
+* sql 
+* data-analysis
+* postgresql
+* game-analytics
+* in-game-economy
 
 ## Автор и дата
 
