@@ -3,21 +3,19 @@
  * на покупку внутриигровой валюты «райские лепестки», а также оценить 
  * активность игроков при совершении внутриигровых покупок
  * 
- * Автор: 
- * Дата: 
+ * Автор: Свечникова Дарья Алексеевна
+ * Дата: 17.11.2025
 */
 
 -- Часть 1. Исследовательский анализ данных
 -- Задача 1. Исследование доли платящих игроков
 
 -- 1.1. Доля платящих пользователей по всем данным:
--- Напишите ваш запрос здесь
 SELECT COUNT(DISTINCT id) AS total_users, --общее количество игроков, зарегистрированных в игре
 	   SUM(payer) AS payer_users,--количество платящих игроков
 	   SUM(payer)/COUNT(DISTINCT id)::numeric AS share_users --доля платящих игроков от общего количества пользователей, зарегистрированных в игре
 FROM fantasy.users;
 -- 1.2. Доля платящих пользователей в разрезе расы персонажа:
--- Напишите ваш запрос здесь
 SELECT DISTINCT race, -- раса персонажа
   	   SUM(payer) AS payer_race_users, -- количество платящих игроков этой расы
   	   COUNT(id) AS total_race_users, -- общее количество зарегистрированных игроков этой расы
@@ -25,9 +23,9 @@ SELECT DISTINCT race, -- раса персонажа
 FROM fantasy.users AS u
 LEFT JOIN fantasy.race r ON u.race_id = r.race_id
 GROUP BY race;
+
 -- Задача 2. Исследование внутриигровых покупок
 -- 2.1. Статистические показатели по полю amount:
--- Напишите ваш запрос здесь
 SELECT COUNT(amount) AS count_transaction, --общее количество покупок
 	   SUM(amount) AS sum_amount, --суммарная стоимость всех покупок
 	   MIN(amount) AS min_amount, -- минимальная стоимость покупки
@@ -37,12 +35,10 @@ SELECT COUNT(amount) AS count_transaction, --общее количество п�
 	   STDDEV(amount) AS stddev_amount --стандартное отклонение стоимости покупки
 FROM fantasy.events; 
 -- 2.2: Аномальные нулевые покупки:
--- Напишите ваш запрос здесь
 SELECT SUM(CASE WHEN amount=0 THEN 1 ELSE 0 END) AS zero_amount, --количество покупок с нулевой стоимостью
 	   SUM(CASE WHEN amount=0 THEN 1 ELSE 0 END)/COUNT(transaction_id)::numeric AS share_zero_amount --доля покупок с нулевой стоимостью от общего числа покупок
 FROM fantasy.events;
 -- 2.3: Популярные эпические предметы:
--- Напишите ваш запрос здесь
 WITH 
 not_null AS (SELECT item_code,
    					id
@@ -68,7 +64,6 @@ LEFT JOIN fantasy.items i  ON u.item_code = i.item_code
 ORDER BY t.absolute_transaction DESC;
 -- Часть 2. Решение ad hoc-задачи
 -- Задача: Зависимость активности игроков от расы персонажа:
--- Напишите ваш запрос здесь
 WITH 
 race_total_users AS (SELECT COUNT(DISTINCT id) AS total_users,--общее количество зарегистрированных игроков по расе
       		   				race_id
