@@ -42,8 +42,7 @@
 * структуру выручки по типу устройства и мероприятия;
 * динамику выручки и заказов по неделям.
 
-**Доступ к дашборду:** [[ссылка на дашборд]
-](https://datalens.yandex/7798w8q0krf2r)
+**Доступ к дашборду:** https://datalens.yandex/7798w8q0krf2r
 
 ## Инструкция по запуску
 
@@ -56,7 +55,7 @@
 ### Порядок запуска
 1. Клонируйте репозиторий:
    ```bash
-   git clone <ссылка_на_репозиторий>
+   git clone https://github.com/DaryaSvechnikova/Practicum_projects
    cd project-1-afisha
    ```
 2. Установите зависимости:
@@ -68,17 +67,18 @@
    jupyter notebook
    ```
 4. Откройте файл `project-1-afisha-analysis.ipynb` и выполните все ячейки последовательно.
-5. Перейдите по ссылке на дашборд для интерактивной аналитики. 
+5. Перейдите по ссылке на дашборд для интерактивной аналитики.
 
 
-### Файл зависимостей (`requirements.txt`)
-Создайте файл `requirements.txt` в корне проекта со следующим содержимым:
-```
-pandas>=1.3.0
-matplotlib>=3.4.0
-seaborn>=0.11.0
-scipy>=1.7.0
+## Теги проекта (Topics)
+* python
+* data-analysis
+* pandas
+* data-visualization
+* yandex-datalens
+* jupyter
+* statistics
 
-## Теги проекта (Topics) python, data-analysis, pandas, data-visualization, yandex-datalens, jupyter, statistics
-## Автор и дата Автор: Свечникова Дарья Алексеевна
-Дата: 10.03.2026 ```
+## Автор и дата
+**Автор:** Свечникова Дарья Алексеевна  
+**Дата:** 10.03.2026 
