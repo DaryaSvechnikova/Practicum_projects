@@ -47,27 +47,28 @@
 
 ## Инструкция по запуску
 
+
 ### Системные требования
-* Python версии 3.8 или выше;
-* установленные зависимости (см. `requirements.txt`).
+* Python версии 3.8 или выше.
+* Установленные библиотеки: pandas, matplotlib, seaborn, scipy.
 
 
 ### Порядок запуска
 1. Клонируйте репозиторий:
    ```bash
    git clone <ссылка_на_репозиторий>
-   cd <название_папки_проекта>
+   cd project-1-afisha
    ```
 2. Установите зависимости:
    ```bash
-   pip install -r requirements.txt
+   pip install pandas matplotlib seaborn scipy
    ```
 3. Запустите Jupyter Notebook:
    ```bash
    jupyter notebook
    ```
 4. Откройте файл `project-1-afisha-analysis.ipynb` и выполните все ячейки последовательно.
-5. Перейдите по ссылке на дашборд для интерактивной аналитики.
+5. Перейдите по ссылке на дашборд для интерактивной аналитики. 
 
 
 ### Файл зависимостей (`requirements.txt`)
